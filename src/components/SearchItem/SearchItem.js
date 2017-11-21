@@ -9,7 +9,7 @@ export default class SearchItem extends PureComponent {
     return (
       <div className="search__item">
         <div className="search__item__link">
-          <Link to={`/show/${id}`}>
+          <Link to={`/shows/${id}`}>
             <h3>{name}</h3>
           </Link>
           <img src={img} alt={name} />

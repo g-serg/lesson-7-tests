@@ -7,7 +7,7 @@ import './Search.css';
 
 class Search extends PureComponent {
   state = {
-    value: 'rex'
+    value: ''
   };
 
   handleChange = event => {
@@ -50,11 +50,11 @@ class Search extends PureComponent {
         </div>
         <div className="search__items">
           {result.map(item => {
-            const {id, name, image: {medium}, summary} = item;
+            const {id, name, image, summary} = item;
             const props = {
               id,
               name,
-              img: medium,
+              img: image.medium,
               summary
             };
             return <SearchItem key={id} {...props} />;
