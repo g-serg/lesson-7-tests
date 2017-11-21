@@ -1,0 +1,11 @@
+.search__item {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.search__item__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
