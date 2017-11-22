@@ -26,12 +26,12 @@ class Show extends PureComponent {
     return (
       <div>
         <p>{name}</p>
-        <img src={image.medium} alt={name} />
+        {image && <img src={image.medium} alt={name} />}
         <div dangerouslySetInnerHTML={{__html: summary}} />
         <div className="show__items">
           {_embedded.cast.map(person => {
-            const {id, image, name} = person.person;
-            return <Person key={id} name={name} img={image.medium} />;
+            const pData = person.person;
+            return <Person key={pData.id} {...pData} />;
           })}
         </div>
       </div>
@@ -39,11 +39,11 @@ class Show extends PureComponent {
   }
 }
 
-const Person = ({name, img}) => {
+const Person = ({name, image}) => {
   return (
     <div>
       <p>{name}</p>
-      <img src={img} alt={name} />
+      {image && <img src={image.medium} alt={name} />}
     </div>
   );
 };

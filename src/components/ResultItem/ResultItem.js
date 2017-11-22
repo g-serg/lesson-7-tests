@@ -1,18 +1,18 @@
 import React, {PureComponent} from 'react';
 import {Link} from 'react-router-dom';
-import './SearchItem.css';
+import './ResultItem.css';
 
-export default class SearchItem extends PureComponent {
+export default class ResultItem extends PureComponent {
   render() {
-    const {id, name, img, summary} = this.props;
+    const {id, name, image, summary} = this.props;
 
     return (
-      <div className="search__item">
-        <div className="search__item__link">
+      <div className="result_item">
+        <div className="result_item__link">
           <Link to={`/shows/${id}`}>
             <h3>{name}</h3>
           </Link>
-          <img src={img} alt={name} />
+          {image && <img src={image.medium} alt={name} />}
         </div>
         <div dangerouslySetInnerHTML={{__html: summary}} />
       </div>

@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {searchRequest} from '../../actions/searchActions';
 import {getIsFetching, getResult, getError} from '../../reducers/search';
-import SearchItem from '../SearchItem/SearchItem';
+import ResultItem from '../ResultItem/ResultItem';
 import {connect} from 'react-redux';
 import './Search.css';
 
@@ -48,16 +48,10 @@ class Search extends PureComponent {
           />
           <button onClick={this.handleClickSearchRequest}>Найти</button>
         </div>
-        <div className="search__items">
+        <div className="result_items">
           {result.map(item => {
-            const {id, name, image, summary} = item;
-            const props = {
-              id,
-              name,
-              img: image.medium,
-              summary
-            };
-            return <SearchItem key={id} {...props} />;
+            const {id} = item;
+            return <ResultItem key={id} {...item} />;
           })}
         </div>
       </div>
