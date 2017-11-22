@@ -1,0 +1,9 @@
+.search__input {
+  padding-bottom: 20px;
+}
+
+.result_items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
